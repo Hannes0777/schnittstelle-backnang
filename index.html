@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Herrenfriseur Backnang | Schnittstelle – Sulzbacherstraße 48</title>
+<meta name="description" content="Herrenfriseur Schnittstelle in Backnang, Sulzbacherstraße 48. Mit und ohne Termin: Mo–Fr 10–19 Uhr, Sa 9–18 Uhr. Jetzt anrufen: 0160 378 55 45.">
+<meta name="theme-color" content="#0a0a0b">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preload" href="assets/fonts/work-sans-variable.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/img/salon-weit.webp" as="image" fetchpriority="high">
+<link rel="stylesheet" href="css/fonts.css">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<a class="skip" href="#main">Zum Inhalt springen</a>
+
+<!-- Logo als SVG-Nachbau (Platzhalter) – echte Logodatei beim Kunden anfragen -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="logo" viewBox="0 0 200 200">
+    <circle cx="100" cy="100" r="98" fill="#0a0a0b" stroke="#4a4a4f" stroke-width="3"/>
+    <g fill="#fff">
+      <path d="M78 34 104 128 99 130 72 38Z"/>
+      <path d="M124 34 98 128 103 130 130 38Z"/>
+      <path d="M100 118c-14 10-24 28-14 40 8 10 22 8 26-4 4-12-2-26-12-36Zm.5 9c7 8 9 18 6 25-3 6-10 7-14 2-5-7 0-20 8-27Z" fill-rule="evenodd"/>
+    </g>
+    <g fill="#fff" font-family="Work Sans, sans-serif" font-weight="500" font-size="17" letter-spacing=".5">
+      <text x="16" y="104">SCHNITT</text>
+      <text x="119" y="104">STELLE</text>
+    </g>
+  </symbol>
+</svg>
+
+<div class="ticker" role="note">
+  <div class="wrap">
+    <span><b>Mo–Fr</b> 10–19 Uhr</span>
+    <span><b>Sa</b> 9–18 Uhr</span>
+    <span class="opt"><b>Mit und ohne Termin</b></span>
+    <a href="tel:+491603785545"><b>0160 378 55 45</b></a>
+  </div>
+</div>
+
+<header class="site-header">
+  <div class="wrap">
+    <nav class="nav" aria-label="Hauptnavigation">
+      <a href="#salon">Der Laden</a>
+      <a href="#schnitte">Schnitte</a>
+    </nav>
+    <a class="badge" href="#top" aria-label="Schnittstelle Backnang – Seitenanfang"><svg role="img" aria-label="Schnittstelle Logo"><use href="#logo"/></svg></a>
+    <nav class="nav r" aria-label="Weitere Navigation">
+      <a href="#bonus">Bonuskarte</a>
+      <a href="#besuch">Zeiten &amp; Weg</a>
+    </nav>
+    <button class="burger" type="button" aria-expanded="false" aria-controls="mnav">Menü</button>
+  </div>
+  <nav class="mnav" id="mnav" aria-label="Mobile Navigation">
+    <a href="#salon">Der Laden</a>
+    <a href="#schnitte">Schnitte</a>
+    <a href="#bonus">Bonuskarte</a>
+    <a href="#besuch">Zeiten &amp; Weg</a>
+  </nav>
+</header>
+
+<main id="main">
+  <span id="top"></span>
+
+  <!-- HERO -->
+  <section class="hero tiles">
+    <div class="photo">
+      <img src="assets/img/salon-weit.webp" width="512" height="640" alt="Salon Schnittstelle: weiße Friseurstühle vor schwarzen Metrofliesen und runden Spiegeln" fetchpriority="high">
+    </div>
+    <svg class="blades" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+      <line x1="64.1" y1="0" x2="54" y2="100" stroke="#e3141f" stroke-width="3" vector-effect="non-scaling-stroke"/>
+      <line x1="52" y1="0" x2="66" y2="100" stroke="#fff" stroke-opacity=".35" stroke-width="1" vector-effect="non-scaling-stroke"/>
+    </svg>
+    <div class="wrap copy">
+      <p class="kicker">Herrenfriseur · Backnang · Sulzbacherstraße 48</p>
+      <h1>Mit Termin oder <span class="o">ohne.</span></h1>
+      <p class="lede">Anrufen und einen Platz sichern – oder einfach reinkommen, wenn du gerade vorbeiläufst.</p>
+      <div class="cta">
+        <a class="btn fill" href="tel:+491603785545">0160 378 55 45</a>
+        <a class="btn line" href="#besuch">So findest du uns</a>
+        <span class="status" id="status" aria-live="polite"><i></i><span>Zeiten ansehen</span></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- DER LADEN -->
+  <section class="salon" id="salon">
+    <div class="wrap grid">
+      <div>
+        <p class="kicker">Der Laden</p>
+        <h2>Schwarze Fliesen, helles Holz, weiße Stühle.</h2>
+        <p>Wer reinkommt, sieht zuerst die Wand: <strong>schwarze Metrofliesen</strong> mit Holzlamellen, runde Spiegel, Grünpflanzen auf den Ablagen. Die <strong>weißen Friseurstühle</strong> tragen die Schere aus dem Logo auf der Lehne. Und über der Tür hängt das Schild mit dem Barber-Pole, damit man den Laden an der Sulzbacherstraße nicht verpasst.</p>
+        <p>Der Name ist Programm: Zwei Klingen, die sich kreuzen – da, wo der Schnitt entsteht.</p>
+      </div>
+      <figure class="collage">
+        <img class="a" src="assets/img/salon-spiegel.webp" width="360" height="640" alt="Friseurstuhl und runder Spiegel vor schwarzer Fliesenwand mit Holzlamellen" loading="lazy">
+        <img class="b" src="assets/img/aussen-schild.webp" width="360" height="640" alt="Schwarz-Weiß-Foto der Hausfassade mit Schnittstelle-Schild und Barber-Pole" loading="lazy">
+        <figcaption>Sulzbacherstraße 48, Backnang</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- SCHNITTE -->
+  <section class="cuts tiles" id="schnitte">
+    <div class="wrap">
+      <div class="head">
+        <h2>Frisch<br>aus dem<br>Stuhl.</h2>
+        <p>Echte Schnitte aus dem Laden, direkt vom Instagram-Kanal @schnittstelle.bk.</p>
+      </div>
+      <div class="strip">
+        <figure class="s1"><img src="assets/img/schnitt-fade.webp" width="512" height="640" alt="Herrenhaarschnitt mit Fade an den Seiten und Locken oben, Seitenansicht" loading="lazy"><figcaption>Fade, Locken oben</figcaption></figure>
+        <figure class="s2"><img src="assets/img/schnitt-welle.webp" width="361" height="640" alt="Nacken- und Hinteransicht eines frischen Haarschnitts mit welligem Deckhaar im Salon" loading="lazy"><figcaption>Nacken sauber, Welle oben</figcaption></figure>
+        <figure class="s3"><img src="assets/img/schnitt-blond.webp" width="320" height="568" alt="Mann mit langem, blond gefärbtem Haar im Salon, Seitenansicht" loading="lazy"><figcaption>Lang &amp; blond</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- BONUSKARTE -->
+  <section class="bonus" id="bonus">
+    <div class="wrap grid">
+      <div>
+        <p class="kicker">Bonuskarte &amp; Gutschein</p>
+        <h2>Beim zehnten Mal <span class="red">zahlt der Laden.</span></h2>
+        <p>Jeder Besuch gibt einen Stempel auf die Bonuskarte. Beim zehnten Besuch löst du <strong>10&nbsp;€ Bonus</strong> ein. Für alle, die lieber verschenken: Gutscheine gibt es auch.</p>
+        <p class="hint">↗ Probier’s aus – Kreise antippen</p>
+      </div>
+      <div class="card" role="group" aria-label="Bonuskarte mit zehn Stempelfeldern">
+        <div class="band" id="stamps"></div>
+        <div class="meta">
+          <div><b>Bonuskarte</b>Schnittstelle · Backnang</div>
+          <small>Dein Bonus wird beim zehnten Besuch eingelöst.</small>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUKTE -->
+  <section class="shop tiles">
+    <div class="wrap grid">
+      <img src="assets/img/produkte.webp" width="360" height="640" alt="Regal mit Styling-Produkten: Pomade, Haarpuder und Wax-Dosen, beleuchtet" loading="lazy">
+      <div>
+        <p class="kicker">Zum Mitnehmen</p>
+        <h2>Unsere Styling-Produkte.</h2>
+        <p>Wax, Puder und Cologne stehen beleuchtet im Regal neben dem Eingang, mit handgeschriebenen Preisschildern auf kleinen Tafeln.</p>
+        <span class="tag">Red One Wax 8,– €</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ZEITEN & WEG -->
+  <section class="visit" id="besuch">
+    <div class="wrap grid">
+      <div class="sign">
+        <p class="kicker">Unsere Öffnungszeiten</p>
+        <dl>
+          <dt>Montag – Freitag</dt><dd>10:00 – 19:00 Uhr</dd>
+          <dt>Samstag</dt><dd>09:00 – 18:00 Uhr</dd>
+        </dl>
+        <p class="or">Mit <em>und</em> <span>ohne</span> Termin</p>
+      </div>
+      <div class="where">
+        <h2>Hier sitzen wir.</h2>
+        <address>Schnittstelle<br>Sulzbacherstraße 48<br>71522 Backnang</address>
+        <a class="tel" href="tel:+491603785545">0160 378 55 45</a>
+        <a class="btn dark" href="https://www.google.com/maps/search/?api=1&amp;query=Sulzbacherstra%C3%9Fe+48+71522+Backnang" target="_blank" rel="noopener">Route berechnen</a>
+        <div class="links">
+          <a href="https://www.instagram.com/schnittstelle.bk/" target="_blank" rel="noopener">Instagram</a>
+          <a href="https://www.facebook.com/Schnittstelle.bk" target="_blank" rel="noopener">Facebook</a>
+        </div>
+        <p class="note light">Preisliste folgt: Haarschnitt, Bart &amp; Co. – bitte schickt uns eure Preise, dann kommen sie hier hin.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot tiles">
+  <div class="wrap">
+    <div class="wordmark" aria-hidden="true">
+      <span>Schnitt</span>
+      <svg viewBox="0 0 60 100" aria-hidden="true"><path d="M20 2 48 78 44 80 14 4Z"/><path d="M40 2 12 78 16 80 46 4Z"/><ellipse cx="14" cy="90" rx="9" ry="9" fill="none" stroke="#fff" stroke-width="3"/><ellipse cx="46" cy="90" rx="9" ry="9" fill="none" stroke="#fff" stroke-width="3"/></svg>
+      <span>Stelle</span>
+    </div>
+    <div class="row">
+      <b>Schnittstelle · Backnang</b>
+      <nav aria-label="Rechtliches">
+        <a href="impressum.html">Impressum</a>
+        <a href="datenschutz.html">Datenschutz</a>
+        <a href="https://www.webdesign-ehmann.de" target="_blank" rel="noopener">Erstellt von Webdesign Ehmann</a>
+      </nav>
+    </div>
+  </div>
+</footer>
+
+<a class="callbar" href="tel:+491603785545"><b>Anrufen</b> 0160 378 55 45</a>
+
+<script src="js/main.js"></script>
+</body>
+</html>

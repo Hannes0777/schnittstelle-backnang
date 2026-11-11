@@ -1,0 +1,112 @@
+/* VORSCHLAG B – "Schnittmuster": hell, typografisch, Haarlinien-Raster.
+   Charakter: ruhig-editorial, Schrift ist das Bild. Idee aus dem Namen:
+   SCHNITT | STELLE – das Wort wird an der Kreuzung der Klingen getrennt. */
+:root { --ink:#0a0a0b; --paper:#f6f6f4; --line:#0a0a0b; --red:#e3141f; --mute:#6a6a6e;
+  --ff-d:'Work Sans',system-ui,sans-serif; --ff-t:'Inter',system-ui,sans-serif; --g:clamp(18px,4vw,56px); }
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 17px/1.6 var(--ff-t);-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%;height:auto} a{color:inherit}
+h1,h2,h3{font-family:var(--ff-d);margin:0;line-height:.9}
+.frame{margin:0 auto;max-width:1400px;padding-inline:var(--g)}
+.small{font:600 11px/1.3 var(--ff-d);letter-spacing:.2em;text-transform:uppercase}
+.red{color:var(--red)}
+
+/* Kopf: dreigeteilte Zeile mit Haarlinien, Nav als eigene Zeile darunter */
+.top{border-bottom:1.5px solid var(--line)}
+.top .frame{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:18px;padding-block:14px}
+.top .l{display:flex;flex-direction:column;gap:2px}
+.top .r{text-align:right}
+.top .r a{text-decoration:none;font:800 15px var(--ff-d);letter-spacing:.04em}
+.top .logo{width:84px;height:84px;display:block}
+.top .logo svg{width:100%;height:100%}
+.subnav{border-bottom:1.5px solid var(--line)}
+.subnav .frame{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.subnav a{font:700 12px var(--ff-d);letter-spacing:.2em;text-transform:uppercase;text-decoration:none;padding:14px 0;border-bottom:3px solid transparent}
+.subnav a:hover{border-bottom-color:var(--red)}
+.status i{display:inline-block;width:8px;height:8px;border-radius:50%;background:#999;margin-right:8px}
+.status.on i{background:#1fa86a}
+@media(max-width:700px){.top .frame{grid-template-columns:auto 1fr}.top .l{display:none}.top .logo{width:64px;height:64px}.subnav .frame{justify-content:center;gap:4px 22px}}
+
+/* Hero: SCHNITT oben links, STELLE unten rechts, Foto dazwischen, Klingen kreuzen */
+.hero{position:relative;padding-block:clamp(28px,4vw,56px) clamp(40px,6vw,88px);overflow:hidden}
+.hero .word{font-weight:800;text-transform:uppercase;font-size:clamp(64px,17.5vw,260px);letter-spacing:-.045em;line-height:.8;display:block}
+.hero .w2{text-align:right;margin-top:clamp(-20px,-2vw,-6px)}
+.hero .mid{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:var(--g);align-items:end;margin-block:calc(-1*clamp(18px,4vw,64px));position:relative;z-index:1}
+.hero .mid .txt{padding-bottom:12px}
+.hero .mid h1{font-size:clamp(22px,2.6vw,34px);font-weight:600;text-transform:none;letter-spacing:-.01em;line-height:1.15;max-width:22ch}
+.hero .mid p{max-width:36ch;color:var(--mute);margin:14px 0 22px}
+.hero .mid figure{margin:0;justify-self:end;width:min(100%,360px);transform:translateY(-8%)}
+.hero .mid img{aspect-ratio:4/5;object-fit:cover;width:100%;filter:grayscale(1) contrast(1.05)}
+.hero .cross{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:2}
+.btn{display:inline-block;font:800 13px/1 var(--ff-d);letter-spacing:.16em;text-transform:uppercase;text-decoration:none;padding:17px 24px;border:2px solid var(--ink);background:var(--ink);color:#fff}
+.btn:hover{background:var(--red);border-color:var(--red)}
+.btn.o{background:transparent;color:var(--ink)} .btn.o:hover{background:var(--ink);color:#fff}
+@media(max-width:700px){.hero .mid{grid-template-columns:1fr}.hero .mid figure{justify-self:start;transform:none;width:70%}.hero .cross{display:none}}
+
+/* Zeiten als Tabelle */
+.times{border-block:1.5px solid var(--line)}
+.times .frame{display:grid;grid-template-columns:repeat(4,1fr)}
+.times .cell{padding:26px 20px 26px 0;border-right:1px solid var(--line)}
+.times .cell+.cell{padding-left:20px}.times .cell:last-child{border-right:0}
+.times b{display:block;font:800 clamp(22px,3vw,40px)/1.05 var(--ff-d);margin-top:10px;letter-spacing:-.02em}
+.times a{text-decoration:none;white-space:nowrap}
+.times .cell:last-child b{font-size:clamp(18px,2.3vw,32px)}
+@media(max-width:800px){.times .frame{grid-template-columns:1fr 1fr}.times .cell:nth-child(2){border-right:0}.times .cell{border-bottom:1px solid var(--line);padding-left:0 !important}}
+
+/* Laden */
+.laden{padding-block:clamp(64px,9vw,128px)}
+.laden .frame{display:grid;grid-template-columns:5fr 7fr;gap:clamp(24px,5vw,80px)}
+.laden h2{font-size:clamp(36px,5.2vw,78px);font-weight:300;letter-spacing:-.03em;line-height:.98}
+.laden h2 b{font-weight:800}
+.laden .cols{columns:2;column-gap:36px;color:#3a3a3e;margin-top:28px}
+.laden .cols p{margin:0 0 1em;break-inside:avoid}
+.laden .pics{display:grid;grid-template-columns:1fr 1fr;gap:12px;align-self:start}
+.laden .pics img{width:100%;aspect-ratio:9/16;object-fit:cover}
+.laden .pics img:first-child{margin-top:48px}
+.laden figcaption{grid-column:1/-1}
+@media(max-width:860px){.laden .frame{grid-template-columns:1fr}.laden .cols{columns:1}}
+
+/* Schnitte als Negativstreifen */
+.strip{background:var(--ink);color:#fff;padding-block:clamp(48px,7vw,96px)}
+.strip h2{font-size:clamp(32px,4.6vw,64px);font-weight:300;letter-spacing:-.03em;margin-bottom:34px}
+.strip h2 b{font-weight:800}
+.film{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;padding:18px 10px;background:#000;border-block:10px dotted #2a2a2d}
+.film figure{margin:0;position:relative}
+.film img{width:100%;aspect-ratio:3/4;object-fit:cover;filter:grayscale(1) contrast(1.08)}
+.film figure:hover img{filter:none}
+.film span{position:absolute;left:8px;top:8px;font:700 11px var(--ff-d);letter-spacing:.14em;background:var(--red);padding:3px 7px}
+.film figcaption{font:600 11px var(--ff-d);letter-spacing:.14em;text-transform:uppercase;color:#9a9a9f;padding-top:8px}
+.strip .hinweis{font-size:13px;color:#8d8d92;margin-top:22px;border:1.5px dashed #444;padding:14px 16px;max-width:70ch}
+@media(max-width:700px){.film{grid-template-columns:1fr 1fr}.film figure:first-child{grid-column:1/-1}}
+
+/* Bonuskarte als Abreißticket */
+.bonus{padding-block:clamp(64px,9vw,120px)}
+.bonus .frame{display:grid;grid-template-columns:1fr 1.2fr;gap:clamp(24px,5vw,80px);align-items:center}
+.bonus h2{font-size:clamp(36px,5vw,72px);font-weight:300;letter-spacing:-.03em;line-height:.98}
+.bonus h2 b{font-weight:800}
+.bonus p{color:#3a3a3e;max-width:40ch}
+.ticket{border:2px solid var(--ink);background:#fff;position:relative}
+.ticket::before,.ticket::after{content:'';position:absolute;top:50%;width:26px;height:26px;border-radius:50%;background:var(--paper);border:2px solid var(--ink);transform:translateY(-50%)}
+.ticket::before{left:-14px}.ticket::after{right:-14px}
+.ticket .hd{display:flex;justify-content:space-between;padding:16px 30px;border-bottom:2px dashed var(--ink)}
+#stamps{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;padding:26px 30px}
+#stamps button{aspect-ratio:1;border-radius:50%;border:2px solid var(--ink);background:transparent;font:700 15px var(--ff-d);cursor:pointer;color:var(--ink)}
+#stamps button.on{background:var(--ink);color:#fff}
+#stamps button.last{border-color:var(--red);color:var(--red)}
+#stamps button.last.on{background:var(--red);color:#fff}
+.ticket .ft{padding:14px 30px 18px;border-top:2px dashed var(--ink);font-size:13px;color:var(--mute)}
+@media(max-width:860px){.bonus .frame{grid-template-columns:1fr}}
+
+/* Kontakt: riesige Nummer */
+.call{background:var(--red);color:#fff;padding-block:clamp(56px,8vw,112px)}
+.call a.tel{display:block;font:800 clamp(40px,10.5vw,170px)/.9 var(--ff-d);letter-spacing:-.045em;text-decoration:none;margin:18px 0 34px}
+.call .row{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;border-top:2px solid #fff;padding-top:22px}
+.call address{font-style:normal}
+.call a{text-decoration:none;border-bottom:2px solid #fff}
+.call .hinweis{font-size:13px;margin-top:30px;opacity:.9;border:1.5px dashed #fff;padding:14px 16px;max-width:70ch}
+@media(max-width:700px){.call .row{grid-template-columns:1fr}}
+
+footer{padding-block:28px;font:500 13px var(--ff-t)}
+footer .frame{display:flex;justify-content:space-between;gap:12px 28px;flex-wrap:wrap}
+footer nav{display:flex;gap:20px;flex-wrap:wrap} footer a{text-decoration:none}
+:focus-visible{outline:3px solid var(--red);outline-offset:3px}
