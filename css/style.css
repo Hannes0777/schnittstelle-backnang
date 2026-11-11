@@ -393,3 +393,25 @@ html { scroll-snap-type: y proximity; }
 /* Überschrift: immer vier Zeilen untereinander */
 .hero h1 span { display: block; }
 .hero h1 { max-width: none; }
+
+/* Hero Desktop: Textblock linksbündig, Überschrift so groß wie die Höhe erlaubt,
+   Text/Buttons/Status bleiben links der Foto-Kante */
+@media (min-width: 801px) {
+  .hero .copy { width: 100%; padding-block: clamp(16px, 4svh, 56px) clamp(16px, 4svh, 48px); }
+  .hero .photo { width: 44%; }
+  .hero .copy > * { max-width: min(50vw, 760px); }
+  .hero .copy > .kicker { max-width: 34ch; }
+  .hero .copy > h1 { max-width: none; font-size: clamp(44px, min(11vw, calc((100svh - 410px) / 3.55)), 170px); }
+  .hero .lede { max-width: 38ch; font-size: clamp(16px, 2.3svh, 19px); margin-block: clamp(10px, 2.2svh, 22px) clamp(14px, 2.8svh, 26px); }
+  .hero .cta { display: flex; flex-wrap: wrap; gap: 12px; }
+  .hero .status { flex-basis: 100%; margin-top: 6px; }
+}
+@media (max-width: 800px) { .hero h1 { font-size: clamp(34px, min(17vw, 8.2svh), 76px); } }
+@media (max-height: 520px) { .hero .copy > h1, .hero h1 { font-size: clamp(26px, 8.2svh, 60px); } }
+@media (min-width: 801px) {
+  .hero .copy > h1 { font-size: clamp(44px, min(11vw, calc((100svh - 436px) / 3.55)), 170px); }
+  .hero .cta { display: grid; grid-template-columns: auto auto; justify-content: start; gap: 12px; }
+  .hero .status { grid-column: 1 / -1; justify-self: start; flex-basis: auto; }
+}
+@media (max-height: 520px) and (min-width: 801px) { .hero .copy { padding-block: 8px 10px; } .hero .cta .btn { padding: 14px 20px; } }
+@media (max-height: 520px) { .hero .copy > h1, .hero h1 { font-size: clamp(26px, 8.2svh, 60px); } }
