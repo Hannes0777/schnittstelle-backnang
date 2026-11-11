@@ -422,3 +422,4 @@ html { scroll-snap-type: y proximity; }
   .hero .copy { padding-block: 16px 24px; }
   .hero h1 { margin-bottom: 20px; }
 }
+@media (max-width: 800px) { .hero .copy { width: 100%; } }
