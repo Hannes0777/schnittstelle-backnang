@@ -415,3 +415,10 @@ html { scroll-snap-type: y proximity; }
 }
 @media (max-height: 520px) and (min-width: 801px) { .hero .copy { padding-block: 8px 10px; } .hero .cta .btn { padding: 14px 20px; } }
 @media (max-height: 520px) { .hero .copy > h1, .hero h1 { font-size: clamp(26px, 8.2svh, 60px); } }
+
+/* Handy-Hero bewusst reduziert: große Überschrift + zwei Buttons, Foto bekommt den Rest */
+@media (max-width: 800px) {
+  .hero .kicker, .hero .lede, .hero .status { display: none; }
+  .hero .copy { padding-block: 16px 24px; }
+  .hero h1 { margin-bottom: 20px; }
+}
