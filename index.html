@@ -6,7 +6,8 @@
 <title>Herrenfriseur Backnang | Schnittstelle – Sulzbacherstraße 48</title>
 <meta name="description" content="Herrenfriseur Schnittstelle in Backnang, Sulzbacherstraße 48. Mit und ohne Termin: Mo–Fr 10–19 Uhr, Sa 9–18 Uhr. Jetzt anrufen: 0160 378 55 45.">
 <meta name="theme-color" content="#0a0a0b">
-<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon.png" type="image/png" sizes="64x64">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="preload" href="assets/fonts/work-sans-variable.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/img/salon-weit.webp" as="image" fetchpriority="high">
 <link rel="stylesheet" href="css/fonts.css">
@@ -14,22 +15,6 @@
 </head>
 <body>
 <a class="skip" href="#main">Zum Inhalt springen</a>
-
-<!-- Logo als SVG-Nachbau (Platzhalter) – echte Logodatei beim Kunden anfragen -->
-<svg width="0" height="0" style="position:absolute" aria-hidden="true">
-  <symbol id="logo" viewBox="0 0 200 200">
-    <circle cx="100" cy="100" r="98" fill="#0a0a0b" stroke="#4a4a4f" stroke-width="3"/>
-    <g fill="#fff">
-      <path d="M78 34 104 128 99 130 72 38Z"/>
-      <path d="M124 34 98 128 103 130 130 38Z"/>
-      <path d="M100 118c-14 10-24 28-14 40 8 10 22 8 26-4 4-12-2-26-12-36Zm.5 9c7 8 9 18 6 25-3 6-10 7-14 2-5-7 0-20 8-27Z" fill-rule="evenodd"/>
-    </g>
-    <g fill="#fff" font-family="Work Sans, sans-serif" font-weight="500" font-size="17" letter-spacing=".5">
-      <text x="16" y="104">SCHNITT</text>
-      <text x="119" y="104">STELLE</text>
-    </g>
-  </symbol>
-</svg>
 
 <div class="ticker" role="note">
   <div class="wrap">
@@ -46,7 +31,7 @@
       <a href="#salon">Der Laden</a>
       <a href="#schnitte">Schnitte</a>
     </nav>
-    <a class="badge" href="#top" aria-label="Schnittstelle Backnang – Seitenanfang"><svg role="img" aria-label="Schnittstelle Logo"><use href="#logo"/></svg></a>
+    <a class="badge" href="#top" aria-label="Schnittstelle Backnang – Seitenanfang"><img src="assets/img/logo-white.png" width="262" height="204" alt="Schnittstelle Logo"></a>
     <nav class="nav r" aria-label="Weitere Navigation">
       <a href="#bonus">Bonuskarte</a>
       <a href="#besuch">Zeiten &amp; Weg</a>
@@ -124,10 +109,9 @@
         <p class="kicker">Bonuskarte &amp; Gutschein</p>
         <h2>Beim zehnten Mal <span class="red">zahlt der Laden.</span></h2>
         <p>Jeder Besuch gibt einen Stempel auf die Bonuskarte. Beim zehnten Besuch löst du <strong>10&nbsp;€ Bonus</strong> ein. Für alle, die lieber verschenken: Gutscheine gibt es auch.</p>
-        <p class="hint">↗ Probier’s aus – Kreise antippen</p>
-      </div>
+              </div>
       <div class="card" role="group" aria-label="Bonuskarte mit zehn Stempelfeldern">
-        <div class="band" id="stamps"></div>
+        <div class="band" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span class="last">10 €</span></div>
         <div class="meta">
           <div><b>Bonuskarte</b>Schnittstelle · Backnang</div>
           <small>Dein Bonus wird beim zehnten Besuch eingelöst.</small>
@@ -177,11 +161,7 @@
 
 <footer class="foot tiles">
   <div class="wrap">
-    <div class="wordmark" aria-hidden="true">
-      <span>Schnitt</span>
-      <svg viewBox="0 0 60 100" aria-hidden="true"><path d="M20 2 48 78 44 80 14 4Z"/><path d="M40 2 12 78 16 80 46 4Z"/><ellipse cx="14" cy="90" rx="9" ry="9" fill="none" stroke="#fff" stroke-width="3"/><ellipse cx="46" cy="90" rx="9" ry="9" fill="none" stroke="#fff" stroke-width="3"/></svg>
-      <span>Stelle</span>
-    </div>
+    <img class="foot-logo" src="assets/img/logo-white.png" width="262" height="204" alt="" loading="lazy">
     <div class="row">
       <b>Schnittstelle · Backnang</b>
       <nav aria-label="Rechtliches">
@@ -192,6 +172,8 @@
     </div>
   </div>
 </footer>
+
+<button class="totop" id="totop" type="button" aria-label="Nach oben"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20V5M5 11.500 12 4.500l7 7" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="square"/></svg></button>
 
 <a class="callbar" href="tel:+491603785545"><b>Anrufen</b> 0160 378 55 45</a>
 

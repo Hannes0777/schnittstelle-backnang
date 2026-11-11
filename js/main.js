@@ -29,25 +29,12 @@
     } catch (e) {}
   }
 
-  // Bonuskarte: zehn antippbare Stempel (Stand bleibt im Browser erhalten)
-  var s = document.getElementById('stamps');
-  if (s) {
-    var key = 'sb-stamps', saved = 0;
-    try { saved = +localStorage.getItem(key) || 0; } catch (e) {}
-    for (var i = 1; i <= 10; i++) {
-      var c = document.createElement('button');
-      c.type = 'button';
-      c.setAttribute('aria-label', 'Stempel ' + i);
-      c.dataset.n = i;
-      if (i === 10) { c.className = 'last'; c.textContent = '10 €'; }
-      if (i <= saved) c.classList.add('on');
-      s.appendChild(c);
-    }
-    s.addEventListener('click', function (e) {
-      var t = e.target.closest('button'); if (!t) return;
-      var n = +t.dataset.n, cur = s.querySelectorAll('.on').length, next = (n === cur) ? n - 1 : n;
-      s.querySelectorAll('button').forEach(function (x) { x.classList.toggle('on', +x.dataset.n <= next); });
-      try { localStorage.setItem(key, next); } catch (e) {}
-    });
+  // Nach-oben-Button: erst nach dem Scrollen sichtbar
+  var up = document.getElementById('totop');
+  if (up) {
+    var onScroll = function () { up.classList.toggle('show', window.scrollY > 500); };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+    up.addEventListener('click', function () { window.scrollTo({ top: 0 }); });
   }
 })();

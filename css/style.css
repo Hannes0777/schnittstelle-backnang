@@ -50,8 +50,8 @@ h1, h2, h3 { font-family: var(--ff-d); margin: 0; text-transform: uppercase; let
 .nav.r { justify-content: flex-end; }
 .nav a { font: 700 13px/1 var(--ff-d); letter-spacing: .18em; text-transform: uppercase; text-decoration: none; padding: 10px 0; border-bottom: 2px solid transparent; }
 .nav a:hover, .nav a[aria-current] { border-bottom-color: var(--red); }
-.badge { display: block; width: 128px; height: 128px; margin-block: -6px -36px; position: relative; z-index: 2; }
-.badge svg { width: 100%; height: 100%; display: block; filter: drop-shadow(0 6px 0 rgba(0,0,0,.35)); }
+.badge { display: grid; place-items: center; width: 128px; height: 128px; margin-block: -6px -36px; position: relative; z-index: 2; border-radius: 50%; background: var(--ink); border: 3px solid #4a4a4f; box-shadow: 0 6px 0 rgba(0,0,0,.35); }
+.badge img { width: 80%; height: auto; }
 .burger { display: none; }
 @media (max-width: 960px) {
   .site-header .wrap { grid-template-columns: 1fr auto 1fr; }
@@ -134,11 +134,8 @@ h1, h2, h3 { font-family: var(--ff-d); margin: 0; text-transform: uppercase; let
 .bonus p { max-width: 40ch; color: var(--mute-dark); }
 .card { background: var(--white); box-shadow: 0 0 0 1px #d9d9d6; transform: rotate(-2deg); }
 .card .band { background: var(--ink); padding: 22px; display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px 12px; }
-.card button { aspect-ratio: 1; border-radius: 50%; border: 0; background: var(--white); cursor: pointer; position: relative; font: 800 13px var(--ff-d); color: var(--ink); }
-.card button::after { content: ''; position: absolute; inset: 22%; background: no-repeat center/contain url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Cpath d='M20 2 4 38M20 2l16 36M10 24h20' stroke='%230a0a0b' stroke-width='3' fill='none'/%3E%3C/svg%3E"); opacity: 0; transform: scale(.4) rotate(-20deg); transition: .18s; }
-.card button.on::after { opacity: 1; transform: none; }
-.card button.last { background: var(--red); color: #fff; }
-.card button.last::after { filter: invert(1); }
+.card .band span { aspect-ratio: 1; border-radius: 50%; background: var(--white); display: grid; place-items: center; font: 800 13px var(--ff-d); color: var(--ink); }
+.card .band .last { background: var(--red); color: #fff; }
 .card .meta { display: flex; justify-content: space-between; align-items: end; gap: 16px; padding: 18px 22px 22px; font: 600 12px/1.5 var(--ff-d); letter-spacing: .08em; text-transform: uppercase; }
 .card .meta b { font-size: 28px; letter-spacing: -.01em; display: block; font-weight: 800; line-height: 1; margin-bottom: 6px; }
 .card .meta small { font-size: 10.5px; color: var(--mute-dark); max-width: 26ch; text-align: right; }
@@ -188,9 +185,7 @@ h1, h2, h3 { font-family: var(--ff-d); margin: 0; text-transform: uppercase; let
 .skip { position: absolute; left: -9999px; top: 0; background: #fff; color: var(--ink); padding: 12px 16px; z-index: 100; font: 700 14px var(--ff-d); }
 .skip:focus { left: 8px; top: 8px; }
 .callbar { display: none; }
-.wordmark { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding-block: 56px 36px; font: 800 clamp(34px, 9.6vw, 150px)/.8 var(--ff-d); letter-spacing: -.04em; text-transform: uppercase; }
-.wordmark span { color: transparent; -webkit-text-stroke: 1.5px #4a4a4f; }
-.wordmark svg { height: .9em; width: auto; fill: #fff; flex: none; }
+.foot-logo { display: block; width: clamp(180px, 22vw, 280px); height: auto; margin: 56px auto 36px; opacity: .95; }
 .foot .row { display: flex; justify-content: space-between; gap: 18px 36px; flex-wrap: wrap; align-items: center; border-top: 1px solid var(--joint); padding-top: 28px; }
 .foot .wrap { display: block; }
 @media (max-width: 800px) {
@@ -205,3 +200,11 @@ h1, h2, h3 { font-family: var(--ff-d); margin: 0; text-transform: uppercase; let
 .legal p, .legal li { color: var(--mute-dark); }
 .legal a { text-decoration: underline; text-underline-offset: 3px; }
 .legal .todo { background: #fff3cd; color: #5c4a00; padding: 1px 6px; }
+
+/* ---------- Nach-oben-Button: erscheint erst nach dem Scrollen ---------- */
+.totop { position: fixed; right: 18px; bottom: 22px; z-index: 40; width: 52px; height: 52px; display: grid; place-items: center; background: var(--red); color: #fff; border: 2px solid #fff; border-radius: 0; cursor: pointer; opacity: 0; visibility: hidden; transform: translateY(12px); transition: opacity .2s, transform .2s, visibility .2s; }
+.totop svg { width: 24px; height: 24px; }
+.totop.show { opacity: 1; visibility: visible; transform: none; }
+.totop:hover { background: #fff; color: var(--red); border-color: var(--red); }
+@media (max-width: 800px) { .totop { bottom: calc(72px + env(safe-area-inset-bottom)); right: 14px; width: 48px; height: 48px; } }
+@media (prefers-reduced-motion: reduce) { .totop { transition: none; } }
