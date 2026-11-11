@@ -208,3 +208,81 @@ h1, h2, h3 { font-family: var(--ff-d); margin: 0; text-transform: uppercase; let
 .totop:hover { background: #fff; color: var(--red); border-color: var(--red); }
 @media (max-width: 800px) { .totop { bottom: calc(72px + env(safe-area-inset-bottom)); right: 14px; width: 48px; height: 48px; } }
 @media (prefers-reduced-motion: reduce) { .totop { transition: none; } }
+
+/* =========================================================
+   Jeder Abschnitt = ein Bildschirm.
+   Inhalt wird vertikal zentriert, Bilder/Schriften orientieren
+   sich an der Bildschirmhöhe (svh), damit nichts überläuft.
+   scroll-snap: "proximity" – rastet ein, sperrt aber nie,
+   falls ein Abschnitt auf kleinen Geräten höher ist.
+   ========================================================= */
+:root { --head: 124px; }
+@media (max-width: 700px) { :root { --head: 140px; } }
+html { scroll-snap-type: y proximity; }
+.hero { min-height: calc(100vh - var(--head)); min-height: calc(100svh - var(--head)); }
+.salon, .cuts, .bonus, .shop, .visit {
+  min-height: 100vh; min-height: 100svh;
+  display: flex; flex-direction: column; justify-content: center;
+  padding-block: clamp(28px, 5svh, 72px);
+  scroll-snap-align: start;
+}
+.salon > .wrap, .cuts > .wrap, .bonus > .wrap, .shop > .wrap, .visit > .wrap { width: 100%; }
+
+.salon h2 { font-size: clamp(34px, min(5.2vw, 8.4svh), 84px); margin: 14px 0 18px; }
+.salon p { font-size: clamp(15px, 2.2svh, 17px); margin-block: 0 .9em; }
+.collage img { aspect-ratio: auto; height: min(64svh, 600px); }
+.collage .a { margin-top: clamp(20px, 5svh, 56px); }
+
+.cuts .head { margin-bottom: clamp(16px, 3.5svh, 36px); }
+.cuts h2 { font-size: clamp(34px, min(5.6vw, 8.5svh), 84px); }
+.strip img { aspect-ratio: auto !important; height: min(56svh, 540px); }
+
+.bonus h2 { font-size: clamp(34px, min(6vw, 10svh), 88px); margin: 14px 0 18px; }
+.shop h2 { font-size: clamp(32px, min(4.6vw, 8svh), 68px); }
+.shop img { aspect-ratio: 9/14; height: min(68svh, 580px); width: auto; max-width: 100%; }
+
+.sign { padding: clamp(20px, 3.5svh, 56px) clamp(20px, 3vw, 40px); }
+.sign dt { margin-top: clamp(12px, 2.4svh, 22px); }
+.where h2 { font-size: clamp(34px, min(5vw, 8svh), 72px); margin-bottom: clamp(14px, 3svh, 26px); }
+.where .tel { font-size: clamp(32px, min(4.6vw, 7.5svh), 60px); margin-block: 8px clamp(14px, 3svh, 28px); }
+.where .note { margin-top: clamp(16px, 3svh, 32px); }
+
+@media (max-width: 860px) {
+  .collage img { height: min(26svh, 240px); }
+  .collage .a { margin-top: 20px; }
+  .strip img { height: min(24svh, 220px); }
+  .salon h2 { font-size: clamp(30px, 8.4vw, 44px); }
+  .shop img { height: min(36svh, 320px); }
+  .where address { font-size: 17px; margin-bottom: 8px; }
+  .where .links { margin-top: 18px; }
+}
+
+/* Hero ebenfalls auf Bildschirmhöhe abgestimmt */
+.hero .copy { padding-block: clamp(24px, 7svh, 96px) clamp(28px, 6svh, 72px); }
+.hero h1 { font-size: clamp(48px, min(8.4vw, 11.5svh), 136px); }
+.hero .lede { font-size: clamp(16px, 2.4svh, 19px); margin-block: clamp(14px, 3svh, 28px) clamp(18px, 3.5svh, 32px); }
+.hero .kicker { margin-bottom: clamp(14px, 3svh, 26px); }
+@media (max-width: 800px) {
+  .hero .photo { height: min(26svh, 230px); }
+  .hero h1 { font-size: clamp(44px, min(15vw, 10.5svh), 84px); }
+  .hero .copy { padding-block: 22px 28px; }
+  .hero .cta { gap: 10px; }
+  .hero .btn { padding: 16px 20px; }
+}
+@media (max-width: 860px) {
+  .collage img { height: min(22svh, 200px); }
+  .salon p { font-size: 15px; }
+  .sign { padding: 18px 18px; }
+  .sign dt { font-size: 16px; margin-top: 10px; }
+  .sign dd { font-size: 20px; }
+  .sign .or { margin-top: 14px; font-size: 16px; }
+  .where h2 { font-size: 32px; margin-bottom: 10px; }
+  .where .tel { font-size: 32px; margin-block: 4px 14px; }
+  .where .btn { padding: 15px 20px; }
+  .where .note { margin-top: 14px; padding: 12px 14px; }
+}
+@media (max-width: 800px) {
+  .hero h1 { max-width: none; font-size: clamp(40px, min(12.4vw, 9svh), 80px); }
+  .hero .lede { margin-block: 14px 18px; }
+}
+@media (max-width: 860px) { .collage img { height: min(20svh, 190px); } }
