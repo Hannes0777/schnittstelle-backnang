@@ -1,14 +1,19 @@
 (function () {
-  // Mobile-Menü
-  var b = document.querySelector('.burger'), m = document.getElementById('mnav');
+  // Mobile-Vollbild-Menü
+  var b = document.querySelector('.burger'), m = document.getElementById('mnav'), root = document.documentElement;
   if (b && m) {
-    b.addEventListener('click', function () {
-      var o = m.classList.toggle('open');
+    var setOpen = function (o, focusBack) {
+      m.classList.toggle('open', o);
       b.setAttribute('aria-expanded', o);
-    });
-    m.addEventListener('click', function (e) {
-      if (e.target.tagName === 'A') { m.classList.remove('open'); b.setAttribute('aria-expanded', false); }
-    });
+      root.classList.toggle('menu-open', o);
+      if (o) { var c = m.querySelector('.mclose'); if (c) c.focus({ preventScroll: true }); }
+      else if (focusBack) b.focus({ preventScroll: true });
+    };
+    b.addEventListener('click', function () { setOpen(true); });
+    m.querySelector('.mclose').addEventListener('click', function () { setOpen(false, true); });
+    m.addEventListener('click', function (e) { if (e.target.closest('.mlinks a')) setOpen(false); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && m.classList.contains('open')) setOpen(false, true); });
+    window.matchMedia('(min-width: 961px)').addEventListener('change', function (q) { if (q.matches) setOpen(false); });
   }
 
   // "Jetzt geöffnet" (Mo–Fr 10–19, Sa 9–18, Zeitzone Berlin)
